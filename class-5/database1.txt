@@ -1,0 +1,25 @@
+For Database design 
+https://training.devskill.com/Course/ViewDetails/fdb5b04a-4c3e-c755-b175-08d96fcdcf9e
+
+--> courses(id, title, summary, prerequisite, fee, type, target, level, duration, total_class, 
+    discount_percent, dicount_start_date, discount_end_date)
+
+--> course_highlights(id, course_id, title, )  
+
+// [1 to many relations]
+//ekhane course_highlights ta amra courses e rakhte pari jodi besi boro na hoy data size 
+and seta 1- many relation 
+//jodi data size boro hoy tahole alada table dorkar hobe
+
+--> course_curriculum(id, course_id, title, description, sl_no) 
+
+--> course_instructor (id, course_id, instructor_id)
+
+--> instructor (id, name, decription, bio, social_media_link)
+
+//for social_media_link
+linkedin => 'https\\..'
+fb=> 'https\\..'
+youtube=> 'https\\..'
+
+
