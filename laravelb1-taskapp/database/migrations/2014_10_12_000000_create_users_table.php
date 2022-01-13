@@ -11,8 +11,6 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-
-     //migration jokhon run hoy tokhon up 
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -31,9 +29,6 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    
-    //jokhon migration revert hoy , ba ulta hoy tokhon down
-    
     public function down()
     {
         Schema::dropIfExists('users');
