@@ -15,6 +15,8 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignId('created_by')->constrained('users');  //contrained use kora hoise karon ekhane created_by foreign key, created_by kon table theke asche seta bujhanor jonno
             $table->timestamps();
         });
     }
