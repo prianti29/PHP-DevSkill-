@@ -108,7 +108,6 @@ class CategoryController extends Controller
         if (!$category) {
             return redirect('/categories');
         }
-       
         $category->delete();
         return redirect('/categories');
     }
