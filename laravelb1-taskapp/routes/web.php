@@ -28,4 +28,10 @@ Route::get('/categories/create', [CategoryController::class, 'create'])->middlew
 
 Route::post('/categories', [CategoryController::class, 'store'])->middleware(['auth']);
 
+Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->middleware(['auth']);
+
+Route::put ('/categories/{id}', [CategoryController::class, 'update'])->middleware(['auth']);
+
+Route::delete ('/categories/{id}', [CategoryController::class, 'destroy'])->middleware(['auth']);
+
 require __DIR__ . '/auth.php';

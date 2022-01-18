@@ -67,7 +67,14 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        // where condition dewa hoise karon onno kono user jate id diye jate task ba kono file change korte na 
+
+        $category = category::where('created_by', Auth::id())->find($id);
+        if (!$category) {
+            return redirect('/categories');
+        }
+        $data["category"] = $category;
+        return view("categories.edit", $data);
     }
 
     /**
@@ -79,7 +86,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = category::find($id);
+        //user jate inspect kore id change korte na pare
+        if (!$category) {
+            return redirect('/categories');
+        }
+        $category->name = $request->category_name;
+        $category->save();
+        return redirect('/categories');
     }
 
     /**
@@ -90,6 +104,12 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = category::find($id);
+        if (!$category) {
+            return redirect('/categories');
+        }
+       
+        $category->delete();
+        return redirect('/categories');
     }
 }
